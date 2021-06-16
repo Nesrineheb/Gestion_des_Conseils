@@ -1,0 +1,172 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} PV CS {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Pv CS</h5>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="javascript:">Acceuil</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:">PV CS</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- [ Main Content ] start -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Etaient présents :</h5>
+                            </div>
+                            <div class="card-block">
+                                <div class="row" >
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                    <div style="">
+                                        <select >
+                                        <option value="">Directeur de l’Ecole et Président du Conseil Scientifique</option>
+                                        <option value="">Directeur adjoint chargé des relations extérieures</option>
+                                        <option value="">Directrice adjoint chargée de la pédagogie</option>
+                                        <option value="">Directeur adjoint chargé de la post-graduation</option>
+                                        <option value="">Chef de département, responsable des classes préparatoires</option>
+                                        <option value="">Directrice de laboratoire</option>
+                                        <option value="">Directrice de la bibliothèque</option>
+                                        <option value="">Enseignant permanent à l’USTHB
+                                        </option>
+                                        <option value="">Representant</option>
+                                        <option value="">Enseignant</option>
+                                      </select>
+                                    </div>
+                                    <div>
+                                        <input type="text" placeholder="M. koudil">
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                                </div>
+                                <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                    <input class="custom-control-input" id="customCheck5" type="checkbox">
+                                    <label class="custom-control-label" for="customCheck5">Directeur de l’Ecole et Président du Conseil Scientifique</label>
+                                  </div>
+                                  <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                    <input class="custom-control-input" id="customCheck6" type="checkbox" checked>
+                                    <label class="custom-control-label" for="customCheck6">Checked</label>
+                                  </div>
+                                  <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                    <input class="custom-control-input" id="customCheck7" type="checkbox" disabled>
+                                    <label class="custom-control-label" for="customCheck7">Disabled Unchecked</label>
+                                  </div>
+                                  <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                    <input class="custom-control-input" id="customCheck8" type="checkbox" checked disabled>
+                                    <label class="custom-control-label" for="customCheck8">Disabled Checked</label>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Etaient absents :</h5>
+                            </div>
+                            <div class="card-block">
+                                <button type="button" class="btn btn-outline-primary" title="btn btn-outline-primary" data-toggle="tooltip">Primary</button>
+                                <button type="button" class="btn btn-outline-secondary" title="btn btn-outline-secondary" data-toggle="tooltip">Secondary</button>
+                                <button type="button" class="btn btn-outline-success" title="btn btn-outline-success" data-toggle="tooltip">Success</button>
+                                <button type="button" class="btn btn-outline-danger" title="btn btn-outline-danger" data-toggle="tooltip">Danger</button>
+                                <button type="button" class="btn btn-outline-warning" title="btn btn-outline-warning" data-toggle="tooltip">Warning</button>
+                                <button type="button" class="btn btn-outline-info" title="btn btn-outline-info" data-toggle="tooltip">Info</button>
+                                <button type="button" class="btn btn-outline-light" title="btn btn-outline-light" data-toggle="tooltip">Light</button>
+                                <button type="button" class="btn btn-outline-dark" title="btn btn-outline-dark" data-toggle="tooltip">Dark</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Ordre du jour :</h5>
+                            </div>
+                            <div class="card-block">
+                                <p>use <code>.btn-square</code> in class <code>.btn</code> class to get square button</p>
+                                <button type="button" class="btn btn-square btn-primary">Primary</button>
+                                <button type="button" class="btn btn-square btn-secondary">Secondary</button>
+                                <button type="button" class="btn btn-square btn-success">Success</button>
+                                <button type="button" class="btn btn-square btn-danger">Danger</button>
+                                <button type="button" class="btn btn-square btn-warning">Warning</button>
+                                <button type="button" class="btn btn-square btn-info">Info</button>
+                                <button type="button" class="btn btn-square btn-light">Light</button>
+                                <button type="button" class="btn btn-square btn-dark">Dark</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>Début de séance :</h5>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Changement de titre de mémoire :</h5>
+                            </div>
+                            <div class="card-block">
+                                <p>use <code>.btn-square</code> in class <code>.btn</code> class to get square button</p>
+                                <button type="button" class="btn btn-square btn-primary">Primary</button>
+                                <button type="button" class="btn btn-square btn-secondary">Secondary</button>
+                                <button type="button" class="btn btn-square btn-success">Success</button>
+                                <button type="button" class="btn btn-square btn-danger">Danger</button>
+                                <button type="button" class="btn btn-square btn-warning">Warning</button>
+                                <button type="button" class="btn btn-square btn-info">Info</button>
+                                <button type="button" class="btn btn-square btn-light">Light</button>
+                                <button type="button" class="btn btn-square btn-dark">Dark</button>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Soutenances de doctorat (Ecole Doctorale):</h5>
+                            </div>
+                            <div class="card-block">
+                                <p>use <code>.btn-square</code> in class <code>.btn</code> class to get square button</p>
+                                <button type="button" class="btn btn-square btn-primary">Primary</button>
+                                <button type="button" class="btn btn-square btn-secondary">Secondary</button>
+                                <button type="button" class="btn btn-square btn-success">Success</button>
+                                <button type="button" class="btn btn-square btn-danger">Danger</button>
+                                <button type="button" class="btn btn-square btn-warning">Warning</button>
+                                <button type="button" class="btn btn-square btn-info">Info</button>
+                                <button type="button" class="btn btn-square btn-light">Light</button>
+                                <button type="button" class="btn btn-square btn-dark">Dark</button>
+                            </div>
+                        </div>
+                       
+                    </div> 
+                </div>
+               
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
