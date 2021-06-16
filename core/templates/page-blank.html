@@ -35,16 +35,18 @@
                               Préparation de la réunion et opérations logistique
 
                               </div>
-                            <div class="card">
+                            <div class="card" >
 
                                 <div class="card-header">
                                     <h5>Informations sur la reunion</h5>
                                 </div>
                                 <div class="card-block">
-                                    <div class="mb-4">
+                                    <div class="mb-4" id="Presence">
                                         <label for="TitreReunion">Titre de la Reunion</label>
                                         <input type="text" class="form-control" id="TitreReunionValidate" >
                                        
+
+
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleFormControlSelect1">CONSEIL</label>
@@ -85,38 +87,294 @@
                             </div>
                         </div>   <!-- [ fin card ] end --> 
 
-                        
+                          
                         <div class="card-block">
                             <div class="btn-group mb-2 mr-2">
                                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ajouter Section</button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item"   >
-                                    
-                                   Transport</a>
-                                    
+                                    <a class="dropdown-item" > Transport</a>
                                     <a class="dropdown-item" href="#!">Nouriture </a>
                                     <a class="dropdown-item" href="#!">Outils</a>
                                 </div>
+                            </div> 
+                            
+                            <script>
+                     
+                            $('#datebox li a').on('click', function(){
+                                //$('#datebox').val($(this).text());
+                                alert($(this).text());
+                            });
+                        </script>
+
+                            <button onclick="showContent()">Show hidden content</button>
+
+                            <template>
+                                 
+                               
+
+
+                            </template>
+                            
+                            <script>
+
+                            function showContent() {
+                              var temp = document.getElementsByTagName("template")[0];
+                              var clon = temp.content.cloneNode(true);
+                              document.body.appendChild(clon);
+                            }
+                            </script>
+                               <div class="form-group">
+                                   
+                                <label for="selection">Ajouter Section</label>
+                                <select id="selection" name="selection" class="form-control" onchange="showHide()" required>
+                                     <option value="Administrateur">Transport</option>
+                                     <option value="Eleve">Eleve</option>
+                                     <option value="Enseignant">Nouriture</option>
+                                     
+                                </select>
+                              </div>
+                             
+
+
+
+                        <div class="card" id="tuteurDiv" style='display:none' >
+
+                            <div class="card-header">
+                                <h5>Informations sur la reunion</h5>
+                               
+                                <button type="button" class="btn btn-square btn-danger" data-toggle="modal" data-target="#exampleModal">
+                                    Delete
+                                  </button>
+                                  
+                                  <!-- Modal -->
+                                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                          "Voulez vous supprimer la section Outils"
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
+                                          <button type="button" class="btn btn-square btn-danger"  onclick="Hide()" data-dismiss="modal">Oui</button>
+                                          <script type="text/javascript">
+                                            function Hide() {
+                                             let option = document.getElementById("selection").value;
+                                            
+                                               document.getElementById("tuteurDiv").style.display = "none";
+                                               
+        
+                                           }
+                                 
+                                           
+                                           
+                                         </script>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                       
                             </div>
+                            <div class="card-block">
+                                <div class="mb-4" id="Presence">
+                                    <label for="TitreReunion">Titre de la Reunion</label>
+                                    <input type="text" class="form-control" id="TitreReunionValidate" >
+                                   
 
-
-                            <div id="myDIV">
-                                
+                               
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">CONSEIL</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option value="LM">Conseil du laboratoire LMCS</option>
+                                        <option value="LC">Conseil du laboratoire LCSI</option>
+                                        <option value="DG">Conseil du CFD</option>
+                                        <option value="DG">Conseil du CS</option>
+                                        <option value="VI">Conseil du CSD</option>
+                                       
+                                    </select>
                                 </div>
                                 
-                                <button onclick="myFunction()">Try it</button>
+                                <div>
+                                    <label for="birthday">Date de la reunion</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <svg class="icon icon-xxs" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+    
+                                        </span>
+                                        <input data-datepicker="" class="form-control" id="datereunion" type="datetime" placeholder="dd/mm/yyyy" required>
+                                    </div> 
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Salle</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option value="LM">Bureau LMCS</option>
+                                        <option value="LC">Bureau LCSI</option>
+                                        <option value="DG">DG 0</option>
+                                        <option value="DG">DG 1</option>
+                                        <option value="VI">VISIO</option>
+                                        <option value="EN">Enligne</option>
+                                    </select>
+                                </div>
+
+                             
+                        </div>
+                    </div> 
                                 
-                                <script>
-                                function myFunction() {
-                                 var x = document.createElement("DIV");
-                                 var t = document.createTextNode("This is a div element.");
-                                 x.setAttribute("style", "background-color: pink;");
-                                 x.appendChild(t);
-                                document.body.appendChild(x);
-                                document.getElementById("myDIV").appendChild(x);}
-                                </script>
-                                
-                            
+                              
+                               
+                              <meta charset="utf-8">
+                              <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                              <meta name="description" content="">
+                              <meta name="author" content="">
+                      
+                      
+                              <!-- Bootstrap core CSS -->
+                              <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+                              <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+                      
+                              <!-- Custom styles for this template -->
+                              <link href="css/shop-homepage.css" rel="stylesheet">
+                              <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                              <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                      
+                              <script type="text/javascript">
+                                 function showHide() {
+                                  let option = document.getElementById("selection").value;
+                                  if (option == 'Eleve'){
+                                    document.getElementById("tuteurDiv").style.display = "block";
+                                    document.getElementById("cycleDiv").style.display = "none";
+                                    document.getElementById("anneeDiv").style.display = "none";
+                                    
+                                  }
+                                  
+
+                                    if (option == 'Transport'){
+                                        document.getElementById("tuteurDiv").style.display = "block";
+                                        document.getElementById("cycleDiv").style.display = "none";
+                                        document.getElementById("anneeDiv").style.display = "none";
+                                    }
+
+                                   
+                                    if (option == 'ouriture'){
+                                        document.getElementById("tuteurDiv").style.display = "none";
+                                        document.getElementById("cycleDiv").style.display = "block";
+                                        document.getElementById("anneeDiv").style.display = "none";
+                                    }
+
+                
+                                 
+                                  
+                                 
+                                }
+                      
+                                function modifAnnees() {
+                      
+                                  let selectBox =document.getElementById("annee");
+                                  while (selectBox.options.length >0) {
+                                    selectBox.remove(0);
+                                  }
+                      
+                                  let option = document.getElementById("cycle").value;
+                      
+                      
+                                  if (option == 'Primaire'){
+                                    for (i = 0; i < 5; i++) {
+                                      const opt = document.createElement('option');
+                                      const opttext = document.createTextNode((i+1).toString());
+                                      opt.appendChild(opttext);
+                                      opt.setAttribute('value',(i+1).toString()); 
+                                      selectBox.appendChild(opt);
+                                    }
+                                    
+                                  }
+                                  else{
+                                    if(option=="Moyen"){
+                                      for (i = 0; i < 4; i++) {
+                                      const opt = document.createElement('option');
+                                      const opttext = document.createTextNode((i+1).toString());
+                                      opt.appendChild(opttext);
+                                      opt.setAttribute('value',(i+1).toString()); 
+                                      selectBox.appendChild(opt);
+                                    }
+                                    }
+                                    else{
+                                      for (i = 0; i < 3; i++) {
+                                      const opt = document.createElement('option');
+                                      const opttext = document.createTextNode((i+1).toString());
+                                      opt.appendChild(opttext);
+                                      opt.setAttribute('value',(i+1).toString()); 
+                                      selectBox.appendChild(opt);
+                                    }
+                                    }
+                                  }
+                                 
+                                  
+                                 
+                                }
+                              </script>
+                           </head>
+                           <body>
+                               <div class="container">
+                               <div class="row justify-content-center">
+                               <div class="col-12 col-md-8 col-lg-6 pb-5">
+                      
+                                 
+                      
+                                    
+                      
+                                     
+                                       <div class="form-group" id="cycleDiv" style='display :none'>
+                                          <label for="cycle">Cycle d'étude</label>
+                                          <select id="cycle" name="cycle" class="form-control" onchange="modifAnnees()" required>
+                                              <option value="Primaire">Pirmaire</option>
+                                              <option value="Moyen">Moyen</option>
+                                              <option value="Secondaire">Secondaire</option>
+                                         </select>
+                                       </div>
+                      
+                                       <div class="form-group" id="anneeDiv" style='display :none'>
+                                          <label for="annee">Année d'étude</label>
+                                          <select id="annee" name="annee" class="form-control" required>
+                                              <option value="1">1</option>
+                                              <option value="2">2</option>
+                                              <option value="3">3</option>
+                                              <option value="4">4</option>
+                                              <option value="5">5</option>
+                                         </select>
+                                       </div>
+                      
+                                       <div class="form-group" id="groupeDiv" style='display :none'>
+                                          <label for="groupe">Groupe</label>
+                                          <select id="groupe" name="groupe" class="form-control" required>
+                                              <option value="1">1</option>
+                                              <option value="2">2</option>
+                                              <option value="3">3</option>
+                                         </select>
+                                       </div>
+                      
+                                     </fieldset>
+                      
+                                     
+                                   </form>
+                               </div>
+                               </div>
+                               </div>
+                          </body>
 
 
                     </div>
