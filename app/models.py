@@ -17,3 +17,4 @@ class Logistique(models.Model):
     SalleReunion= models.CharField(max_length=150)
     Transport= models.CharField(max_length=150)
     Nouriture= models.CharField(max_length=150)
+    

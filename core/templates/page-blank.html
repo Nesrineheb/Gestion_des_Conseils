@@ -31,32 +31,94 @@
                     <!-- [ Main Content ] start -->
                     <div class="row">
                         <div class="col-sm-12">
+                            <div class="alert alert-info" role="alert">
+                              Préparation de la réunion et opérations logistique
+
+                              </div>
                             <div class="card">
+
                                 <div class="card-header">
-                                    <h5>Hello card</h5>
+                                    <h5>Informations sur la reunion</h5>
                                 </div>
                                 <div class="card-block">
-                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                                    </p>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="formFile" class="form-label">Default file input example</label>
-                                    <input class="form-control" type="file" id="formFile">
-                                  </div>
-                                  <div class="mb-3">
-                                    <label for="formFileMultiple" class="form-label">Multiple files input example</label>
-                                    <input class="form-control" type="file" id="formFileMultiple" multiple>
-                                  </div>
-                                  <div class="mb-3">
-                                    <label for="formFileDisabled" class="form-label">Disabled file input example</label>
-                                    <input class="form-control" type="file" id="formFileDisabled" disabled>
-                                  </div>
-                                  <div class="mb-3">
-                                    <label for="formFileSm" class="form-label">Small file input example</label>
-                                    <input class="form-control form-control-sm" id="formFileSm" type="file">
-                                  </div>
+                                    <div class="mb-4">
+                                        <label for="TitreReunion">Titre de la Reunion</label>
+                                        <input type="text" class="form-control" id="TitreReunionValidate" >
+                                       
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">CONSEIL</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <option value="LM">Conseil du laboratoire LMCS</option>
+                                            <option value="LC">Conseil du laboratoire LCSI</option>
+                                            <option value="DG">Conseil du CFD<</option>
+                                            <option value="DG">Conseil du CS<</option>
+                                            <option value="VI">Conseil du CSD</option>
+                                           
+                                        </select>
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="birthday">Date de la reunion</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">
+                                                <svg class="icon icon-xxs" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+        
+                                            </span>
+                                            <input data-datepicker="" class="form-control" id="datereunion" type="datetime" placeholder="dd/mm/yyyy" required>
+                                        </div> 
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Salle</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <option value="LM">Bureau LMCS</option>
+                                            <option value="LC">Bureau LCSI</option>
+                                            <option value="DG">DG 0</option>
+                                            <option value="DG">DG 1</option>
+                                            <option value="VI">VISIO</option>
+                                            <option value="EN">Enligne</option>
+                                        </select>
+                                    </div>
+
+                                 
                             </div>
-                        </div>
+                        </div>   <!-- [ fin card ] end --> 
+
+                        
+                        <div class="card-block">
+                            <div class="btn-group mb-2 mr-2">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ajouter Section</button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item"   >
+                                    
+                                   Transport</a>
+                                    
+                                    <a class="dropdown-item" href="#!">Nouriture </a>
+                                    <a class="dropdown-item" href="#!">Outils</a>
+                                </div>
+                            </div>
+
+
+                            <div id="myDIV">
+                                
+                                </div>
+                                
+                                <button onclick="myFunction()">Try it</button>
+                                
+                                <script>
+                                function myFunction() {
+                                 var x = document.createElement("DIV");
+                                 var t = document.createTextNode("This is a div element.");
+                                 x.setAttribute("style", "background-color: pink;");
+                                 x.appendChild(t);
+                                document.body.appendChild(x);
+                                document.getElementById("myDIV").appendChild(x);}
+                                </script>
+                                
+                            
+
+
                     </div>
                     <!-- [ Main Content ] end -->
                 </div>
@@ -68,3 +130,8 @@
 
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}{% endblock javascripts %}
+
+var selectStateInputEl = d.querySelector('#state');
+if(selectStateInputEl) {
+    const choices = new Choices(selectStateInputEl);
+}
