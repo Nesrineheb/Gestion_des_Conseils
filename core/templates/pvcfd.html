@@ -1,0 +1,136 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Page Blank {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <!-- [ breadcrumb ] start -->
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                                <h5 class="m-b-10">Creation de Proces Verbale</h5>
+                            </div>
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="javascript:"> Comité de Formation
+                                    Doctorale de L’École Doctorale de l’ESI</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ breadcrumb ] end -->
+            <div class="main-body">
+                <div class="page-wrapper">
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="alert alert-info" role="alert">
+                              Création du PV de la reunion du comité de formation doctorale de l'ESI
+                              </div>
+                            <div class="card">
+
+                                <div class="card-header">
+                                    <h5>PV CFD </h5>
+                                </div>
+                                <div class="card-block">
+                                    <div class="mb-4">
+                                        <label for="TitreReunion">Ordre du jour</label>
+                                        <input type="text" class="form-control" id="TitreReunionValidate" >
+                                       
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="TitreReunion">Etaient presents: </label>
+                                        <input type="text" class="form-control" id="TitreReunionValidate" >
+                                       
+                                        <div id="Presence">
+                                
+                                        </div>
+                                        
+                                        <button onclick="myFunction()">Ajouter</button>
+                                        
+                                        <script>
+                                        function myFunctionPresence() {
+                                         var x = document.createElement("Presence");
+                                         var t = document.createTextNode("This is a div element.");
+                                         x.setAttribute("style", "background-color: pink;");
+                                         x.appendChild(t);
+                                        document.body.appendChild(x);
+                                        document.getElementById("Presence").appendChild(x);}
+                                        </script>
+                                        
+                                    
+        
+        
+                            </div>
+                                       
+                                    </div>
+                        
+                                    
+                                    <div>
+                                        <label for="birthday">Date de la réunion</label>
+                                        <div class="input-group">
+                                            <input data-datepicker="" class="form-control" id="datereunion" type="datetime" placeholder="dd/mm/yyyy" required>
+                                        </div> 
+                                    </div>
+                                    <div>
+                                        <label for="birthday">Début de la réunion</label>
+                                        <div class="input-group">
+                                            <input data-datepicker="" class="form-control" id="datereunion" type="datetime" placeholder="11H:30" required>
+                                        </div> 
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Salle</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <option value="LM">Bureau LMCS</option>
+                                            <option value="LC">Bureau LCSI</option>
+                                            <option value="DG">DG 0</option>
+                                            <option value="DG">DG 1</option>
+                                            <option value="VI">VISIO</option>
+                                            <option value="EN">Enligne</option>
+                                        </select>
+                                    </div>
+
+                                 
+                            </div>
+                        </div>   <!-- [ fin card ] end --> 
+
+                        
+                        <div class="card-block">
+                            <div class="btn-group mb-2 mr-2">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ajouter Section</button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item"   >
+                                    
+                                </a>
+                                    
+                                    <a class="dropdown-item" href="#!">Nouriture </a>
+                                    <a class="dropdown-item" href="#!">Outils</a>
+                                </div>
+                            </div>
+
+
+                            
+                    <!-- [ Main Content ] end -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
+
+var selectStateInputEl = d.querySelector('#state');
+if(selectStateInputEl) {
+    const choices = new Choices(selectStateInputEl);
+}
