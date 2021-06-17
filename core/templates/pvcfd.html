@@ -46,46 +46,82 @@
                                         <input type="text" class="form-control" id="TitreReunionValidate" >
                                        
                                     </div>
-                                    <div class="mb-4">
+                                    <div id="test">
                                         <label for="TitreReunion">Etaient presents: </label>
+                                        <div  for="TitreReunion" id="duppliquer">
                                         <input type="text" class="form-control" id="TitreReunionValidate" >
-                                       
-                                        <div id="Presence">
-                                
                                         </div>
+                                    </div>
                                         
-                                        <button onclick="myFunction()">Ajouter</button>
+                                        <button onclick="myFunction1()">Ajouter</button>
                                         
                                         <script>
-                                        function myFunctionPresence() {
-                                         var x = document.createElement("Presence");
-                                         var t = document.createTextNode("This is a div element.");
-                                         x.setAttribute("style", "background-color: pink;");
-                                         x.appendChild(t);
-                                        document.body.appendChild(x);
-                                        document.getElementById("Presence").appendChild(x);}
-                                        </script>
-                                        
-                                    
+                                        function myFunction1() {
+                                          var para = document.getElementById("duppliquer");
+                                          var dup=para.cloneNode(true);
+                                          document.getElementById("test").appendChild(dup);
+                                        }
+                                        </script>        
+                                        <div>
+                                            <label for="birthday">Date de la réunion</label>
+                                            <div class="input-group">
+                                                <input data-datepicker="" class="form-control" id="datereunion" type="datetime" placeholder="dd/mm/yyyy" required>
+                                            </div> 
+                                        </div>
+                                        <div>
+                                            <label for="birthday">Début de la réunion</label>
+                                            <div class="input-group">
+                                                <input data-datepicker="" class="form-control" id="datereunion" type="datetime" placeholder="11H:30" required>
+                                            </div> 
+                                        </div>
         
         
                             </div>
                                        
                                     </div>
-                        
+
+                                    <div class="card">
+
+                                        <div class="card-header">
+                                            <h5>Section Validation sujet </h5>
+                                        </div>
+                                        <div class="card-block">
+                                            <div class="mb-4">
+                                                <label for="TitreReunion">Ordre du jour</label>
+                                                <input type="text" class="form-control" id="TitreReunionValidate" >
+                                               
+                                            </div>
+                                            <div id="test">
+                                                <label for="TitreReunion">Etaient presents: </label>
+                                                <div  for="TitreReunion" id="duppliquer">
+                                                <input type="text" class="form-control" id="TitreReunionValidate" >
+                                                </div>
+                                            </div>
+                                                
+                                                <button onclick="myFunction2()">Ajouter</button>
+                                                
+                                                <script>
+                                                function myFunction2() {
+                                                  var para = document.getElementById("duppliquer");
+                                                  var dup=para.cloneNode(true);
+                                                  document.getElementById("test").appendChild(dup);
+                                                }
+                                                </script>        
                                     
-                                    <div>
-                                        <label for="birthday">Date de la réunion</label>
-                                        <div class="input-group">
-                                            <input data-datepicker="" class="form-control" id="datereunion" type="datetime" placeholder="dd/mm/yyyy" required>
-                                        </div> 
+                
                                     </div>
-                                    <div>
-                                        <label for="birthday">Début de la réunion</label>
-                                        <div class="input-group">
-                                            <input data-datepicker="" class="form-control" id="datereunion" type="datetime" placeholder="11H:30" required>
-                                        </div> 
-                                    </div>
+                                               
+                                            </div>
+
+
+
+
+
+
+
+
+
+                                   
 
                                     <div class="form-group">
                                         <label for="exampleFormControlSelect1">Salle</label>
@@ -104,23 +140,11 @@
                         </div>   <!-- [ fin card ] end --> 
 
                         
-                        <div class="card-block">
-                            <div class="btn-group mb-2 mr-2">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ajouter Section</button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item"   >
-                                    
-                                </a>
-                                    
-                                    <a class="dropdown-item" href="#!">Nouriture </a>
-                                    <a class="dropdown-item" href="#!">Outils</a>
-                                </div>
-                            </div>
+                        
 
 
                             
                     <!-- [ Main Content ] end -->
-                </div>
             </div>
         </div>
     </div>
