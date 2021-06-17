@@ -1,222 +1,574 @@
-{% extends "layouts/base.html" %}
-
-{% block title %} Page Blank {% endblock %} 
+{% extends "layouts/base.html" %} {% block title %} Page Blank {% endblock %}
 
 <!-- Specific CSS goes HERE -->
-{% block stylesheets %}{% endblock stylesheets %}
+{% block stylesheets %}{% endblock stylesheets %} {% block content %}
 
-{% block content %}
+<div class="pcoded-content">
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-    <div class="pcoded-content">
-        <div class="pcoded-inner-content">
-            <!-- [ breadcrumb ] start -->
-            <div class="page-header">
-                <div class="page-block">
-                    <div class="row align-items-center">
-                        <div class="col-md-12">
-                            <div class="page-header-title">
-                                <h5 class="m-b-10">Sample Page</h5>
-                            </div>
-                            <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="javascript:">Sample Page</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+
+  <!-- Custom styles for this template -->
+  <link href="css/shop-homepage.css" rel="stylesheet" />
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"
+  ></script>
+
+  <div class="pcoded-inner-content">
+    <!-- [ breadcrumb ] start -->
+    <div class="page-header">
+      <div class="page-block">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <div class="page-header-title">
+              <h5 class="m-b-10">Reservation et logistique</h5>
             </div>
-            <!-- [ breadcrumb ] end -->
-            <div class="main-body">
-                <div class="page-wrapper">
-                    <!-- [ Main Content ] start -->
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="alert alert-info" role="alert">
-                              Préparation de la réunion et opérations logistique
-
-                              </div>
-                            <div class="card" >
-
-                                <div class="card-header">
-                                    <h5>Informations sur la reunion</h5>
-                                </div>
-                                <div class="card-block">
-                                    <div class="mb-4" id="Presence">
-                                        <label for="TitreReunion">Titre de la Reunion</label>
-                                        <input type="text" class="form-control" id="TitreReunionValidate" >
-                                       
-
-
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlSelect1">CONSEIL</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option value="LM">Conseil du laboratoire LMCS</option>
-                                            <option value="LC">Conseil du laboratoire LCSI</option>
-                                            <option value="DG">Conseil du CFD<</option>
-                                            <option value="DG">Conseil du CS<</option>
-                                            <option value="VI">Conseil du CSD</option>
-                                           
-                                        </select>
-                                    </div>
-                                    
-                                    <div>
-                                        <label for="birthday">Date de la reunion</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text">
-                                                <svg class="icon icon-xxs" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
-        
-                                            </span>
-                                            <input data-datepicker="" class="form-control" id="datereunion" type="datetime" placeholder="dd/mm/yyyy" required>
-                                        </div> 
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="exampleFormControlSelect1">Salle</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option value="LM">Bureau LMCS</option>
-                                            <option value="LC">Bureau LCSI</option>
-                                            <option value="DG">DG 0</option>
-                                            <option value="DG">DG 1</option>
-                                            <option value="VI">VISIO</option>
-                                            <option value="EN">Enligne</option>
-                                        </select>
-                                    </div>
-
-                                 
-                            </div>
-                        </div>   <!-- [ fin card ] end --> 
-
-                          
-                            
-                            <!--show Transport Div -->
-                            <script>
-                            function showTransport() {
-                               document.getElementById("transportDiv").style.display = "block";       
-                            }
-                            </script>
-                           
-                        <div class="card" id="transportDiv" style='display:none' >
-
-                            <div class="card-header">
-                                <h5>Informations sur le transport</h5>
-                               
-                                <button type="button" class="btn btn-square btn-danger" data-toggle="modal" data-target="#exampleModal">
-                                    Delete
-                                  </button>
-                                  
-                                  <!-- Modal -->
-                                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                          </button>
-                                        </div>
-                                        <div class="modal-body">
-                                          "Voulez vous supprimer la section Outils"
-                                        </div>
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
-                                          <button type="button" class="btn btn-square btn-danger"  onclick="Hide()" data-dismiss="modal">Oui</button>
-                                          <script type="text/javascript">
-                                            function Hide() {
-                                             document.getElementById("transportDiv").style.display = "none";
-                                           } 
-                                         </script>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                            </div>
-                            <div class="card-block">
-                                <div class="mb-4" id="Presence">
-                                    <label for="TitreReunion">Titre de la Reunion</label>
-                                    <input type="text" class="form-control" id="TitreReunionValidate" >
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect1">CONSEIL</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option value="LM">Conseil du laboratoire LMCS</option>
-                                        <option value="LC">Conseil du laboratoire LCSI</option>
-                                        <option value="DG">Conseil du CFD</option>
-                                        <option value="DG">Conseil du CS</option>
-                                        <option value="VI">Conseil du CSD</option>
-                                    </select>
-                                </div>
-                                
-                                <div>
-                                    <label for="birthday">Date de la reunion</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text">
-                                            <svg class="icon icon-xxs" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
-    
-                                        </span>
-                                        <input data-datepicker="" class="form-control" id="datereunion" type="datetime" placeholder="dd/mm/yyyy" required>
-                                    </div> 
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Salle</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option value="LM">Bureau LMCS</option>
-                                        <option value="LC">Bureau LCSI</option>
-                                        <option value="DG">DG 0</option>
-                                        <option value="DG">DG 1</option>
-                                        <option value="VI">VISIO</option>
-                                        <option value="EN">Enligne</option>
-                                    </select>
-                                </div>
-
-                             
-                        </div>
-                    </div> 
-                    <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle"  type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         Ajouter une Section
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                          <button class="dropdown-item" type="button" onclick="showTransport()">Transport</button>
-                          <button class="dropdown-item" type="button">Outils</button>
-                          <button class="dropdown-item" type="button">Restauration</button>
-                        </div>
-                      </div> 
-                    
-                               
-                              <meta charset="utf-8">
-                              <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-                              <meta name="description" content="">
-                              <meta name="author" content="">
-                      
-                      
-                              <!-- Bootstrap core CSS -->
-                              <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-                              <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-                      
-                              <!-- Custom styles for this template -->
-                              <link href="css/shop-homepage.css" rel="stylesheet">
-                              <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-                              <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-                      
-                             
-                        
-
-                    </div>
-                    <!-- [ Main Content ] end -->
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
+    <!-- [ breadcrumb ] end -->
+    <div class="main-body">
+      <div class="page-wrapper">
+        <!-- [ Main Content ] start -->
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="alert alert-info" role="alert">
+              Préparation de la réunion et opérations logistique
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <h5>Informations sur la reunion</h5>
+              </div>
+              <div class="card-block">
+                <div class="mb-4" id="Presence">
+                  <label for="TitreReunion">Titre de la Reunion</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="TitreReunionValidate"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">CONSEIL</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option value="LM">Conseil du laboratoire LMCS</option>
+                    <option value="LC">Conseil du laboratoire LCSI</option>
+                    <option value="DG">Conseil du CFD</option>
+                    <option value="DG">Conseil du CS</option>
+                    <option value="VI">Conseil du CSD</option>
+                  </select>
+                </div>
 
+                <div>
+                  <label for="birthday">Date de la reunion</label>
+                  <div class="input-group">
+                    <span class="input-group-text">
+                      <svg
+                        class="icon icon-xxs"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </span>
+                    <input
+                      data-datepicker=""
+                      class="form-control"
+                      id="datereunion"
+                      type="datetime"
+                      placeholder="dd/mm/yyyy"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="mb-4" id="Presence">
+                  <label for="TitreReunion">Heure de la Reunion</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="TitreReunionValidate"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Salle</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option value="LM">Bureau LMCS</option>
+                    <option value="LC">Bureau LCSI</option>
+                    <option value="DG">DG 0</option>
+                    <option value="DG">DG 1</option>
+                    <option value="VI">VISIO</option>
+                    <option value="EN">Enligne</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- ein de info sur reunion  -->
+
+            <!--show Transport Div -->
+            <script>
+              function showTransport() {
+                document.getElementById("transportDiv").style.display = "block";
+              }
+            </script>
+
+            <div class="card" id="transportDiv" style="display: none">
+              <div class="card-header">
+                <h5>Informations sur le transport</h5>
+
+                <button
+                  type="button"
+                  class="btn btn-square btn-danger"
+                  data-toggle="modal"
+                  data-target="#exampleModal"
+                >
+                  Supprimer
+                </button>
+
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          Supprimer Section
+                        </h5>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        "Voulez vous supprimer la section Transport ?"
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-dismiss="modal"
+                        >
+                          Non
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-square btn-danger"
+                          onclick="HideT()"
+                          data-dismiss="modal"
+                        >
+                          Oui
+                        </button>
+                        <script type="text/javascript">
+                          function HideT() {
+                            document.getElementById(
+                              "transportDiv"
+                            ).style.display = "none";
+                          }
+                        </script>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-block">
+                <div class="mb-4" id="Presence">
+                  <label for="TitreReunion">Ajouter une Remarque </label>
+                  <input type="text" class="form-control" id="NoteTransport" />
+                </div>
+                <div class="form-group">
+                  <label for="selection">Type transport</label>
+                  <select
+                    id="selection"
+                    name="selection"
+                    class="form-control"
+                    onchange="showHide()"
+                    required
+                  >
+                    <option value="aucun">Aucun</option>
+                    <option value="Individuelle">Individuelle</option>
+                    <option value="Bus">Bus</option>
+                    <option value="Deux">Les deux</option>
+                  </select>
+                </div>
+
+                <!-- Script type transport -->
+                <script type="text/javascript">
+                  function showHide() {
+                    let option = document.getElementById("selection").value;
+                    if (option == "Individuelle") {
+                      document.getElementById(
+                        "transportindivDiv"
+                      ).style.display = "block";
+                      document.getElementById("BusDiv").style.display = "none";
+                    }
+                    if (option == "Bus") {
+                      document.getElementById("BusDiv").style.display = "block";
+                      document.getElementById(
+                        "transportindivDiv"
+                      ).style.display = "none";
+                    }
+                    if (option == "Deux") {
+                      document.getElementById("BusDiv").style.display = "block";
+                      document.getElementById(
+                        "transportindivDiv"
+                      ).style.display = "block";
+                    }
+                  }
+                </script>
+                <!--Transport individuelle DIV-->
+                <div
+                  class="form-group"
+                  id="transportindivDiv"
+                  style="display: none"
+                >
+                  <label for="cycle">Classe de Vehicule</label>
+                  <select
+                    id="cycle"
+                    name="cycle"
+                    class="form-control"
+                    onchange=""
+                    required
+                  >
+                    <option value="Primaire">Basic</option>
+                    <option value="Moyen">Moyen</option>
+                    <option value="Secondaire">Comfortable large</option>
+                    <label for="groupe">Haute classe</label>
+                  </select>
+                  <label for="tuteur">Le nombre de Vehicule</label>
+                  <input
+                    type="Num"
+                    class="form-control"
+                    id="tuteur"
+                    name="tuteur"
+                    placeholder=""
+                    required
+                  />
+                </div>
+
+                <!--Transport Bus DIV-->
+                <div class="form-group" id="BusDiv" style="display: none">
+                  <label for="cycle">Classe du Bus</label>
+                  <select
+                    id="cycle"
+                    name="cycle"
+                    class="form-control"
+                    onchange=""
+                    required
+                  >
+                    <option value="Moyen">Moyen</option>
+                    <option value="Secondaire">Comfortable large</option>
+                    <label for="groupe">Haute classe</label>
+                  </select>
+                  <label for="tuteur">Le nombre de Bus </label>
+                  <input
+                    type="Num"
+                    class="form-control"
+                    id="tuteur"
+                    name="tuteur"
+                    placeholder=""
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- fin Div tranport section -->
+
+            <!-- Debut Div section Outils -->
+            <script>
+              function showOutils() {
+                document.getElementById("OutilsDiv").style.display = "block";
+              }
+            </script>
+
+            <div class="card" id="OutilsDiv" style="display: none">
+              <div class="card-header">
+                <h5>Informations sur les Outils</h5>
+
+                <button
+                  type="button"
+                  class="btn btn-square btn-danger"
+                  data-toggle="modal"
+                  data-target="#exampleModalOutil"
+                >
+                  Supprimer
+                </button>
+                 <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="exampleModalOutil"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          Supprimer Section
+                        </h5>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        "Voulez vous supprimer la section Restauration ?"
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-dismiss="modal"
+                        >
+                          Non
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-square btn-danger"
+                          onclick="Hideoutil()"
+                          data-dismiss="modal"
+                        >
+                          Oui
+                        </button>
+                        <script type="text/javascript">
+                          function Hideoutil() {
+                            document.getElementById("OutilsDiv").style.display =
+                              "none";
+                          }
+                        </script>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          <div class="card-block">
+          <script type="text/javascript">
+            function ShowHideDiv(chkDataShow) {
+              var divDataShow = document.getElementById("divDataShow");
+              divDataShow.style.display = chkDataShow.checked ? "block" : "none";
+            }
+          </script>
+          <div class="custom-control custom-checkbox">
+            <labelclass="form-check-label" for="exampleCheck1">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="ShowHideDiv(this)" />
+              Datashow
+            </label>
+          </div>
+
+          <div class="card" id="divDataShow" style="display: none">
+            <input type="Num" class="form-control" id="DatashowQ" name="datashow">
+          </div>
+          
+
+
+
+          
+
+
+
+
+
+
+
+
+
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Veuillez ajouter une remarque sur les outils si vous avez
+              ?</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+
+        </div>
+
+
+
+
+
+
+        
+            </div>
+
+
+
+
+
+  
+            <!-- Debut Div section Restauration -->
+            <script>
+              function showRestauration() {
+                document.getElementById("RestoDiv").style.display = "block";
+              }
+            </script>
+
+            <div class="card" id="RestoDiv" style="display: none">
+              <div class="card-header">
+                <h5>Informations sur la Restauration</h5>
+
+                <button
+                  type="button"
+                  class="btn btn-square btn-danger"
+                  data-toggle="modal"
+                  data-target="#exampleModalResto"
+                >
+                  Supprimer
+                </button>
+
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="exampleModalResto"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          Supprimer Section
+                        </h5>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        "Voulez vous supprimer la section Restauration ?"
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-dismiss="modal"
+                        >
+                          Non
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-square btn-danger"
+                          onclick="HHideResto()"
+                          data-dismiss="modal"
+                        >
+                          Oui
+                        </button>
+                        <script type="text/javascript">
+                          function HideResto() {
+                            document.getElementById("RestoDiv").style.display =
+                              "none";
+                          }
+                        </script>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-block">
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1"
+                    >Veuillez ajouter une remarque sur les outils si vous avez
+                    ?</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-primary dropdown-toggle"
+              type="button"
+              id="dropdownMenu2"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Ajouter une Section
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <button
+                class="dropdown-item"
+                type="button"
+                onclick="showTransport()"
+              >
+                Transport
+              </button>
+              <button
+                class="dropdown-item"
+                type="button"
+                onclick="showOutils()"
+              >
+                Outils
+              </button>
+              <button
+                class="dropdown-item"
+                type="button"
+                onclick="showRestauration()"
+              >
+                Restauration
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- [ Main Content ] end -->
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->
-{% block javascripts %}{% endblock javascripts %}
-
-var selectStateInputEl = d.querySelector('#state');
-if(selectStateInputEl) {
-    const choices = new Choices(selectStateInputEl);
-}
+{% block javascripts %}{% endblock javascripts %} var selectStateInputEl =
+d.querySelector('#state'); if(selectStateInputEl) { const choices = new
+Choices(selectStateInputEl); }
