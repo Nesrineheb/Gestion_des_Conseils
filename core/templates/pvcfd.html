@@ -33,7 +33,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="alert alert-info" role="alert">
-                              Création du PV de la reunion du comité de formation doctorale de l'ESI
+                              Création du PV de la réunion du comité de formation doctorale de l'ESI
                               </div>
                             <div class="card">
 
@@ -48,14 +48,18 @@
                                     </div>
                                     <div id="test">
                                         <label for="TitreReunion">Etaient presents: </label>
-                                        <div  for="TitreReunion" id="duppliquer">
+                                        <div  class="mb-4" for="TitreReunion" id="duppliquer">
                                         <input type="text" class="form-control" id="TitreReunionValidate" >
                                         </div>
-                                    </div>
-                                        
-                                        <button onclick="myFunction1()">Ajouter</button>
-                                        
-                                        <script>
+                                    </div>  
+                                    <button class="btn btn-square btn-primary" onclick="myFunction1()">Ajouter</button>
+                                    <button type="button" class="btn btn-square btn-danger" data-toggle="modal" data-target="#exampleModal"  onclick="Hide1()">
+                                        Supprimer
+                                      </button>
+                                      <script >
+                                        function Hide1() {
+                                         document.getElementById("duppliquer").style.display = "none";
+                                       } 
                                         function myFunction1() {
                                           var para = document.getElementById("duppliquer");
                                           var dup=para.cloneNode(true);
@@ -74,74 +78,132 @@
                                                 <input data-datepicker="" class="form-control" id="datereunion" type="datetime" placeholder="11H:30" required>
                                             </div> 
                                         </div>
-        
-        
-                            </div>
-                                       
+                            </div>    
                                     </div>
+                                    <script > 
+                                        function affichersection() {
+                                            document.getElementById("validation").style.display ="block";   
+                                        }
+                                        function affichersec2()
+                                        {
+                                            document.getElementById("suivi").style.display ="block"; 
+                                        }
+                                        function affichersec3()
+                                        {
+                                            document.getElementById("").style.display ="block"; 
+                                        }
 
-                                    <div class="card">
-
-                                        <div class="card-header">
-                                            <h5>Section Validation sujet </h5>
-                                        </div>
-                                        <div class="card-block">
-                                            <div class="mb-4">
-                                                <label for="TitreReunion">Ordre du jour</label>
-                                                <input type="text" class="form-control" id="TitreReunionValidate" >
-                                               
+                                        </script> 
+                                        <div id="validation" class="card" style='display:none'>
+                                            <div class="card-header">
+                                                <h5>Section Validation des propositions des sujets de doctorat </h5>
                                             </div>
-                                            <div id="test">
-                                                <label for="TitreReunion">Etaient presents: </label>
-                                                <div  for="TitreReunion" id="duppliquer">
-                                                <input type="text" class="form-control" id="TitreReunionValidate" >
+                                            <div id="validation-dupp" class="card-block">
+                                                <div class="mb-4">
+                                                    <label for="TitreReunion">Sujet</label>
+                                                    <input type="text" class="form-control" id="TitreReunionValidate" > 
                                                 </div>
+                                                <div class="mb-4">
+                                                    <label for="TitreReunion">Directeur de these</label>
+                                                    <input type="text" class="form-control" id="TitreReunionValidate" > 
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label for="TitreReunion">Co-directeur de these </label>
+                                                    <input type="text" class="form-control" id="TitreReunionValidate" > 
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label for="TitreReunion"> Avis du CFD </label>
+    
+                                                    <select  class="form-control" id="selection" name="selection" onchange="showHide2()" required >
+                                                      <option value="Favorable">Avis favorable</option>
+                                                      <option value="Non favorable">Avis Non favorable</option>
+                                                      <option value="Autre"> Autres </option>
+                                                    </select>
+                                                                        <script type="text/javascript">
+                                                                        function showHide2() {
+                                                                        let opt = document.getElementById("selection").value;
+                                                                        if (opt == 'Autre'){
+                                                                        document.getElementById("saisiejus").style.display = "block";
+                                                                        } 
+                                                                    }
+                                                            
+                                                                    </script> 
+                                                     <div class="mb-4" class="form-group" id="saisiejus" style='display :none'>
+                                                        <label  class="mb-4" for="tuteur">Justificatif</label>
+                                                        <input type="text" class="form-control" id="TitreReunionValidate"  placeholder="saisir justificatif" required> 
+                                                     </div>        
+                                                 </div>
+                                                 <button class="btn btn-primary " type="button"  aria-haspopup="true" aria-expanded="false" onclick="ajoutersujet()">Ajouter un sujet de these </button>
+                                                 <button type="button" class="btn btn-square btn-danger" data-toggle="modal" data-target="#exampleModal"  onclick="Hide2()"> Supprimer sujet </button>
+
+
+                                                 <script >
+                                                     function Hide2() {
+                                                         document.getElementById("validation-dupp").style.display = "none";
+                                                                     } 
+                                                    function ajoutersujet() {
+                                                      var param = document.getElementById("validation-dupp");
+                                                      var du=param.cloneNode(true);
+                                                      document.getElementById("validation").appendChild(du);
+
+                                                    }
+                                                    </script> 
+                                                </div>   
+
+                                        </div>  
+                                     
+                                        <!--2 EME ELEMENT  --> 
+
+                                        <div id="suivi" class="card" style='display:none'>
+                                            <div class="card-header">
+                                                <h5>Section suivi des doctorants </h5>
                                             </div>
+                                            <div  id="suivi_dupp" class="card-block">
+                                                <div class="mb-4">
+                                                    <label for="TitreReunion">nom doctorant</label>
+                                                    <input type="text" class="form-control" id="TitreReunionValidate" > 
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label for="TitreReunion"> Decision du CFD  </label>
+    
+                                                    <select  class="form-control" id="selection" name="selection" onchange="showHide2()" required >
+                                                      <option value="Favorable">Admis </option>
+                                                      <option value="Non favorable">inscrit à la nouvelle année</option>
+                                                      <option value="Autre"> ecxlut</option>
+                                                    </select>
+                                                                               
+                                                 </div>
+                                                 <button class="btn btn-primary " type="button"  aria-haspopup="true" aria-expanded="false" onclick="Ajouterdoc()">Ajouter un doctorant</button>
+                                                 <script >
                                                 
-                                                <button onclick="myFunction2()">Ajouter</button>
-                                                
-                                                <script>
-                                                function myFunction2() {
-                                                  var para = document.getElementById("duppliquer");
-                                                  var dup=para.cloneNode(true);
-                                                  document.getElementById("test").appendChild(dup);
-                                                }
-                                                </script>        
-                                    
-                
-                                    </div>
-                                               
-                                            </div>
+                                                   function Ajouterdoc() {
+                                                     var parame = document.getElementById("suivi_dupp");
+                                                     var dupl=parame.cloneNode(true);
+                                                     document.getElementById("suivi").appendChild(dupl);
+
+                                                   }
+                                                   </script> 
+                                                </div>      
+                                        </div> 
 
 
 
-
-
-
-
-
-
-                                   
-
-                                    <div class="form-group">
-                                        <label for="exampleFormControlSelect1">Salle</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option value="LM">Bureau LMCS</option>
-                                            <option value="LC">Bureau LCSI</option>
-                                            <option value="DG">DG 0</option>
-                                            <option value="DG">DG 1</option>
-                                            <option value="VI">VISIO</option>
-                                            <option value="EN">Enligne</option>
-                                        </select>
-                                    </div>
-
-                                 
+                                         </div>
+                                         
+                                                <!-- [ fin div  ] end --> 
                             </div>
                         </div>   <!-- [ fin card ] end --> 
 
                         
                         
 
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="myFunction2()">Ajouter une nouvelle section</button>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item"  onclick="affichersection()" >Section validation sujet </button>
+                            <button class="dropdown-item" onclick="affichersec2()" >Section suivi doctorants   </button>
+                            <button class="dropdown-item" onclick="affichersec3()">Section signature </button>
+                        </div>
+                        <button class="btn btn-primary " type="button"  aria-haspopup="true" aria-expanded="false" onclick="">Generer  PV sous format PDF</button>
 
                             
                     <!-- [ Main Content ] end -->
