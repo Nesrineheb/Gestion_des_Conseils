@@ -52,8 +52,8 @@
                                         <input type="text" class="form-control" id="TitreReunionValidate" >
                                         </div>
                                     </div>  
-                                    <button class="btn btn-square btn-primary" onclick="myFunction1()">Ajouter</button>
-                                    <button type="button" class="btn btn-square btn-danger" data-toggle="modal" data-target="#exampleModal"  onclick="Hide1()">
+                                    <button style="float: right;" class="btn btn-square btn-primary" onclick="myFunction1()">Ajouter</button>
+                                    <button style="float: right;" type="button" class="btn btn-square btn-danger" data-toggle="modal" data-target="#exampleModal"  onclick="Hide1()">
                                         Supprimer
                                       </button>
                                       <script >
@@ -66,18 +66,24 @@
                                           document.getElementById("test").appendChild(dup);
                                         }
                                         </script>        
-                                        <div>
+                                        <div class="mb-4">
                                             <label for="birthday">Date de la réunion</label>
                                             <div class="input-group">
                                                 <input data-datepicker="" class="form-control" id="datereunion" type="datetime" placeholder="dd/mm/yyyy" required>
                                             </div> 
                                         </div>
-                                        <div>
+                                        <div class="mb-4">
                                             <label for="birthday">Début de la réunion</label>
                                             <div class="input-group">
                                                 <input data-datepicker="" class="form-control" id="datereunion" type="datetime" placeholder="11H:30" required>
                                             </div> 
                                         </div>
+                                        <div class="mb-4">
+                                            <label for="birthday">Fin de la réunion</label>
+                                            <div class="input-group">
+                                                <input data-datepicker="" class="form-control" id="datereunion" type="datetime" placeholder="11H:30" required>
+                                            </div> 
+                                        </div> 
                             </div>    
                                     </div>
                                     <script > 
@@ -97,125 +103,73 @@
                                         <div id="validation" class="card" style='display:none'>
                                             <div class="card-header">
                                                 <h5>Section Validation des propositions des sujets de doctorat </h5>
+                                                <button style="float: right;" type="button" class="btn btn-square btn-danger" data-toggle="modal" data-target="#exampleModal"  onclick="Hide2()"> Supprimer sujet </button>
+                                                <button  style="float: right;"class="btn btn-primary " type="button"  aria-haspopup="true" aria-expanded="false" onclick="ajoutersujet()">Ajouter sujet  </button>
+
                                             </div>
+
                                             <div id="validation-dupp" class="card-block">
                                                 <div class="mb-4">
                                                     <label for="TitreReunion">Sujet</label>
                                                     <input type="text" class="form-control" id="TitreReunionValidate" > 
                                                 </div>
-                                                <div class="mb-4">
-                                                    <label for="TitreReunion">Directeur de these</label>
-                                                    <input type="text" class="form-control" id="TitreReunionValidate" > 
-                                                </div>
-                                                <div class="mb-4">
-                                                    <label for="TitreReunion">Co-directeur de these </label>
-                                                    <input type="text" class="form-control" id="TitreReunionValidate" > 
-                                                </div>
-                                                <div class="mb-4">
-                                                    <label for="TitreReunion"> Avis du CFD </label>
-    
-                                                    <select  class="form-control" id="selection" name="selection" onchange="showHide2()" required >
-                                                      <option value="Favorable">Avis favorable</option>
-                                                      <option value="Non favorable">Avis Non favorable</option>
-                                                      <option value="Autre"> Autres </option>
-                                                    </select>
-                                                                        <script type="text/javascript">
-                                                                        function showHide2() {
-                                                                        let opt = document.getElementById("selection").value;
-                                                                        if (opt == 'Autre'){
-                                                                        document.getElementById("saisiejus").style.display = "block";
-                                                                        } 
-                                                                    }
-                                                            
-                                                                    </script> 
-                                                     <div class="mb-4" class="form-group" id="saisiejus" style='display :none'>
-                                                        <label  class="mb-4" for="tuteur">Justificatif</label>
-                                                        <input type="text" class="form-control" id="TitreReunionValidate"  placeholder="saisir justificatif" required> 
-                                                     </div>        
+                                                <div class="mb-4">  <label for="TitreReunion">Directeur de these</label> <input type="text" class="form-control" id="TitreReunionValidate" > </div>
+                                                <div class="mb-4"><label for="TitreReunion">Co-directeur de these </label>  <input type="text" class="form-control" id="TitreReunionValidate" >    </div>
+                                                <div class="mb-4">  <label for="TitreReunion"> Avis du CFD </label> <select  class="form-control" id="selection" name="selection" onchange="showHide2()" required > <option value="Favorable">Avis favorable</option>  <option value="Non favorable">Avis Non favorable</option>  <option value="Autre"> Autres </option></select>
+                                                                        <script type="text/javascript"> function showHide2() { let opt = document.getElementById("selection").value;  if (opt == 'Autre'){ document.getElementById("saisiejus").style.display = "block";  }  }
+                                                                        </script> 
+                                                     <div class="mb-4" class="form-group" id="saisiejus" style='display :none'> <label  class="mb-4" for="tuteur">Justificatif</label>  <input type="text" class="form-control" id="TitreReunionValidate"  placeholder="saisir justificatif" required>   </div>        
                                                  </div>
-                                                 <button class="btn btn-primary " type="button"  aria-haspopup="true" aria-expanded="false" onclick="ajoutersujet()">Ajouter un sujet de these </button>
-                                                 <button type="button" class="btn btn-square btn-danger" data-toggle="modal" data-target="#exampleModal"  onclick="Hide2()"> Supprimer sujet </button>
-
-
-                                                 <script >
-                                                     function Hide2() {
-                                                         document.getElementById("validation-dupp").style.display = "none";
-                                                                     } 
-                                                    function ajoutersujet() {
-                                                      var param = document.getElementById("validation-dupp");
-                                                      var du=param.cloneNode(true);
-                                                      document.getElementById("validation").appendChild(du);
-
-                                                    }
+                                                </div>
+                                                 
+                                                    <script > function Hide2() {  document.getElementById("validation-dupp").style.display = "none";   } 
+                                                     function ajoutersujet() {var param = document.getElementById("validation-dupp"); var du=param.cloneNode(true);  document.getElementById("validation").appendChild(du);  }
                                                     </script> 
+                                                 
                                                 </div>   
-
-                                        </div>  
-                                     
-                                        <!--2 EME ELEMENT  --> 
-
-                                        <div id="suivi" class="card" style='display:none'>
+                                         
+                                        <div id="suivi" class="card" style='display:none'>      <!--2 EME ELEMENT  --> 
                                             <div class="card-header">
                                                 <h5>Section suivi des doctorants </h5>
+                                                <button style="float: right;" class="btn  btn-square btn-primary " type="button"  onclick="Ajouterdoc()">Ajouter un doctorant </button>
+
+
                                             </div>
+
+                                      
                                             <div  id="suivi_dupp" class="card-block">
-                                                <div class="mb-4">
-                                                    <label for="TitreReunion">nom doctorant</label>
-                                                    <input type="text" class="form-control" id="TitreReunionValidate" > 
-                                                </div>
+                                                <div class="mb-4"> <label for="TitreReunion">nom doctorant</label> <input type="text" class="form-control" id="TitreReunionValidate" >   </div>
                                                 <div class="mb-4">
                                                     <label for="TitreReunion"> Decision du CFD  </label>
-    
                                                     <select  class="form-control" id="selection" name="selection" onchange="showHide2()" required >
                                                       <option value="Favorable">Admis </option>
                                                       <option value="Non favorable">inscrit à la nouvelle année</option>
-                                                      <option value="Autre"> ecxlut</option>
-                                                    </select>
-                                                                               
-                                                 </div>
-                                                 <button class="btn btn-primary " type="button"  aria-haspopup="true" aria-expanded="false" onclick="Ajouterdoc()">Ajouter un doctorant</button>
-                                                 <script >
-                                                
-                                                   function Ajouterdoc() {
-                                                     var parame = document.getElementById("suivi_dupp");
-                                                     var dupl=parame.cloneNode(true);
-                                                     document.getElementById("suivi").appendChild(dupl);
-
-                                                   }
-                                                   </script> 
-                                                </div>      
-                                        </div> 
-
-
-
-                                         </div>
-                                         
-                                                <!-- [ fin div  ] end --> 
-                            </div>
-                        </div>   <!-- [ fin card ] end --> 
-
-                        
-                        
-
+                                                      <option value="Autre"> exclut</option>                           
+                                                     </select>                           
+                                                 </div> 
+                                                </div>                                        
+                                       
+                                                   <script >    
+                                                         function Ajouterdoc() { var parame = document.getElementById("suivi_dupp");  var dupll=parame.cloneNode(true); document.getElementById("suivi").appendChild(dupll); }
+                                                    </script>
+                                                <!-- [ fin div  ] end -->                          
+                                        </div>
+                        </div>    
+                    </div>
+                          <!-- [ fin card ] end -->                         
                         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="myFunction2()">Ajouter une nouvelle section</button>
                         <div class="dropdown-menu">
                             <button class="dropdown-item"  onclick="affichersection()" >Section validation sujet </button>
-                            <button class="dropdown-item" onclick="affichersec2()" >Section suivi doctorants   </button>
-                            <button class="dropdown-item" onclick="affichersec3()">Section signature </button>
+                            <button class="dropdown-item"  onclick="affichersec2()" >Section suivi doctorants   </button>
                         </div>
-                        <button class="btn btn-primary " type="button"  aria-haspopup="true" aria-expanded="false" onclick="">Generer  PV sous format PDF</button>
-
-                            
+                        <button class="btn btn-primary " type="button"  aria-haspopup="true" aria-expanded= "false" onclick="">Generer PV sous format PDF</button>          
                     <!-- [ Main Content ] end -->
             </div>
         </div>
     </div>
-
 {% endblock content %}
-
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}{% endblock javascripts %}
-
 var selectStateInputEl = d.querySelector('#state');
 if(selectStateInputEl) {
     const choices = new Choices(selectStateInputEl);
