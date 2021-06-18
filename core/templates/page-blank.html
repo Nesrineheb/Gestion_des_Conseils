@@ -130,12 +130,23 @@
                 </div>
               </div>
             </div>
-            <!-- ein de info sur reunion  -->
+            <!-- fin de info sur reunion  -->
 
             <!--show Transport Div -->
             <script>
               function showTransport() {
                 document.getElementById("transportDiv").style.display = "block";
+                 if(document.getElementById("RestoDiv").style.display == "block" &  
+                  document.getElementById("OutilsDiv").style.display == "block" &  
+                  document.getElementById("transportDiv").style.display == "block"
+                   ) {
+                      document.getElementById("dropdownMenu2").disabled=true;
+                      
+                   }else  {
+                     document.getElementById("dropdownMenu2").style.disabled =false;
+                   }
+                   
+                   ;
               }
             </script>
 
@@ -200,6 +211,7 @@
                             document.getElementById(
                               "transportDiv"
                             ).style.display = "none";
+                             document.getElementById("dropdownMenu2").disabled =false;
                           }
                         </script>
                       </div>
@@ -314,6 +326,15 @@
             <script>
               function showOutils() {
                 document.getElementById("OutilsDiv").style.display = "block";
+                 if(document.getElementById("RestoDiv").style.display == "block" & 
+                  document.getElementById("OutilsDiv").style.display == "block" & 
+                  document.getElementById("transportDiv").style.display == "block"
+                   ) {
+                      document.getElementById("dropdownMenu2").disabled=true;
+                      
+                   }
+                   
+                   ;
               }
             </script>
 
@@ -376,6 +397,7 @@
                           function Hideoutil() {
                             document.getElementById("OutilsDiv").style.display =
                               "none";
+                              document.getElementById("dropdownMenu2").disabled =false;
                           }
                         </script>
                       </div>
@@ -384,10 +406,13 @@
                 </div>
               </div>
           <div class="card-block">
+
+          <!-- Ajouter Datashow-->
           <script type="text/javascript">
             function ShowHideDiv(chkDataShow) {
               var divDataShow = document.getElementById("divDataShow");
               divDataShow.style.display = chkDataShow.checked ? "block" : "none";
+              
             }
           </script>
           <div class="custom-control custom-checkbox">
@@ -396,22 +421,57 @@
               Datashow
             </label>
           </div>
-
+         
           <div class="card" id="divDataShow" style="display: none">
             <input type="Num" class="form-control" id="DatashowQ" name="datashow">
           </div>
-          
+
+
+          <!-- Ajouter PC-->
+           <script type="text/javascript">
+            function ShowHideDivPC(chkPC) {
+              var divPC= document.getElementById("divPC");
+              divPC.style.display = chkPC.checked ? "block" : "none";
+            }
+          </script>
+          <div class="custom-control custom-checkbox">
+            <labelclass="form-check-label" for="exampleCheck1">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="ShowHideDivPC(this)" />
+              PC
+            </label>
+          </div>
+
+          <div class="card" id="divPC" style="display: none">
+            <input type="Num" class="form-control" id="PCQ" name="PC">
+          </div>
 
 
 
-          
+          <!-- Ajouter PC-->
+           <script type="text/javascript">
+            function ShowHideDivBlocknote(chkBN) {
+              var divBN= document.getElementById("divBN");
+              divBN.style.display = chkBN.checked ? "block" : "none";
+            }
+          </script>
+          <div class="custom-control custom-checkbox">
+            <labelclass="form-check-label" for="exampleCheck1">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="ShowHideDivBlocknote(this)" />
+              Block Note
+            </label>
+          </div>
+
+          <div class="card" id="divBN" style="display: none">
+            <input type="Num" class="form-control" id="BNQ" name="Block Note">
+          </div>
 
 
 
 
 
 
-
+          <div class="card-block">
+         
 
 
           <div class="form-group">
@@ -432,6 +492,8 @@
 
 
 
+          </div>
+
 
 
   
@@ -439,6 +501,14 @@
             <script>
               function showRestauration() {
                 document.getElementById("RestoDiv").style.display = "block";
+                 if(
+                  document.getElementById("OutilsDiv").style.display == "block" & 
+                  document.getElementById("RestoDiv").style.display == "block" &
+                  document.getElementById("transportDiv").style.display == "block"
+                   ) {
+                      document.getElementById("dropdownMenu2").disabled=true;
+                      
+                   }
               }
             </script>
 
@@ -493,7 +563,7 @@
                         <button
                           type="button"
                           class="btn btn-square btn-danger"
-                          onclick="HHideResto()"
+                          onclick="HideResto()"
                           data-dismiss="modal"
                         >
                           Oui
@@ -502,7 +572,10 @@
                           function HideResto() {
                             document.getElementById("RestoDiv").style.display =
                               "none";
+                              document.getElementById("dropdownMenu2").disabled =false;
+                            
                           }
+                          
                         </script>
                       </div>
                     </div>
@@ -511,6 +584,71 @@
               </div>
               <div class="card-block">
                 <div class="form-group">
+
+
+
+           <!-- Ajouter Pause caffee-->
+           <script type="text/javascript">
+            function ShowHideDivPCaffe(chkPCF) {
+              var divPCF= document.getElementById("divPCF");
+              divPCF.style.display = chkPCF.checked ? "block" : "none";
+            }
+          </script>
+          <div class="custom-control custom-checkbox">
+            <labelclass="form-check-label" for="exampleCheck1">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="ShowHideDivPCaffe(this)" />
+              Pause caffee
+            </label>
+          </div>
+
+          <div class="card" id="divPCF" style="display: none">
+            <input type="Num" class="form-control" id="PCF" name="Pause caffee">
+          </div>
+
+         
+
+         <!-- Ajouter Pause caffee-->
+           <script type="text/javascript">
+            function ShowHideDivPDej(chkPDJ) {
+              var divPDJ= document.getElementById("divPDJ");
+              divPDJ.style.display = chkPDJ.checked ? "block" : "none";
+            }
+          </script>
+          <div class="custom-control custom-checkbox">
+            <labelclass="form-check-label" for="exampleCheck1">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="ShowHideDivPDej(this)" />
+              Pause caffee
+            </label>
+          </div>
+
+          <div class="card" id="divPDJ" style="display: none">
+            <input type="Num" class="form-control" id="PDJ" name="Pause Dejeuner">
+          </div>
+
+          <!-- Ajouter Eau/JUS-->
+           <script type="text/javascript">
+            function ShowHideDivPE(chkEJ) {
+              var divEJ= document.getElementById("divEJ");
+              divEJ.style.display = chkEJ.checked ? "block" : "none";
+            }
+          </script>
+          <div class="custom-control custom-checkbox">
+            <labelclass="form-check-label" for="exampleCheck1">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="ShowHideDivPE(this)" />
+              Eau/JUS
+            </label>
+          </div>
+
+          <div class="card" id="divEJ" style="display: none">
+            <input type="Num" class="form-control" id="PCF" name="Pause Eau/JUS">
+          </div>
+
+
+
+
+        
+
+
                   <label for="exampleFormControlTextarea1"
                     >Veuillez ajouter une remarque sur les outils si vous avez
                     ?</label
@@ -523,8 +661,7 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="dropdown">
+          <div class="dropdown" >
             <button
               class="btn btn-primary dropdown-toggle"
               type="button"
@@ -532,14 +669,30 @@
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
+              
+              
             >
               Ajouter une Section
             </button>
+            <script>
+              function hidBUTTON() {
+               if(document.getElementById("RestoDiv").style.display == "block" and 
+                  document.getElementById("OutilsDiv").style.display == "block" and 
+                  document.getElementById("transportDiv").style.display == "block"
+                   ) {
+                      document.getElementById("dropdownMenu2").disabled=true;
+                      
+                   }
+                   
+                   ;
+              }
+            </script>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
               <button
                 class="dropdown-item"
                 type="button"
                 onclick="showTransport()"
+               
               >
                 Transport
               </button>
@@ -547,6 +700,7 @@
                 class="dropdown-item"
                 type="button"
                 onclick="showOutils()"
+               
               >
                 Outils
               </button>
@@ -554,10 +708,73 @@
                 class="dropdown-item"
                 type="button"
                 onclick="showRestauration()"
+               
               >
                 Restauration
               </button>
             </div>
+
+             <div class="form-group row">
+                  <div class="col-sm-12">
+                    <button type="submit" class="btn btn-primary btn-block" data-toggle="modal"
+                  data-target="#exampleModalEnegistrer" >Enregistrer</button>
+                         <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="exampleModalEnegistrer"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          Enregistrer La demande
+                        </h5>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        "Voulez vous Enregistrer votre demande ?"
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-dismiss="modal"
+                        >
+                          Non
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-success "
+                          
+                          data-dismiss="modal"
+                        >
+                          Oui
+                        </button>
+                       
+
+
+                       
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+               </div>
+
+
+
+
+
           </div>
         </div>
         <!-- [ Main Content ] end -->

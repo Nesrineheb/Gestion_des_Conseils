@@ -18,3 +18,7 @@ class Logistique(models.Model):
     Transport= models.CharField(max_length=150)
     Nouriture= models.CharField(max_length=150)
     
+
+
+class Document(models.Model):
+    docfile = models.FileField(upload_to='documents/%Y/%m/%d')
