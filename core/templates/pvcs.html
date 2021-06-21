@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} PV CS {% endblock %} 
+{% block title %} PV CS {% endblock %}
 
 <!-- Specific CSS goes HERE -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -19,8 +19,7 @@
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="javascript:">Acceuil</a></li>
-                            <li class="breadcrumb-item"><a href="javascript:">PV CS</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:">Conseil Scientifique de l'ESI</a></li>
                         </ul>
                     </div>
                 </div>
@@ -30,139 +29,285 @@
         <div class="main-body">
             <div class="page-wrapper">
                 <!-- [ Main Content ] start -->
-                <div class="row">
+                
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-header">
                                 <h5>Etaient présents :</h5>
                             </div>
-                            <div class="card-block">
-                                <div class="row" >
+                            <div class="card-block" >
+                                <div id="present-add"></div> 
+                                <div class="row" id="present">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                    <div style="">
-                                        <select >
-                                        <option value="">Directeur de l’Ecole et Président du Conseil Scientifique</option>
-                                        <option value="">Directeur adjoint chargé des relations extérieures</option>
-                                        <option value="">Directrice adjoint chargée de la pédagogie</option>
-                                        <option value="">Directeur adjoint chargé de la post-graduation</option>
-                                        <option value="">Chef de département, responsable des classes préparatoires</option>
-                                        <option value="">Directrice de laboratoire</option>
-                                        <option value="">Directrice de la bibliothèque</option>
-                                        <option value="">Enseignant permanent à l’USTHB
-                                        </option>
-                                        <option value="">Representant</option>
-                                        <option value="">Enseignant</option>
-                                      </select>
+                                            
+                                            <div style="">
+                                                <select class="form-control">
+                                                    <option value="">Directeur de l’Ecole et Président du Conseil
+                                                        Scientifique</option>
+                                                    <option value="">Directeur adjoint chargé des relations extérieures
+                                                    </option>
+                                                    <option value="">Directrice adjoint chargée de la pédagogie</option>
+                                                    <option value="">Directeur adjoint chargé de la post-graduation
+                                                    </option>
+                                                    <option value="">Chef de département, responsable des classes
+                                                        préparatoires</option>
+                                                    <option value="">Directrice de laboratoire</option>
+                                                    <option value="">Directrice de la bibliothèque</option>
+                                                    <option value="">Enseignant permanent à l’USTHB
+                                                    </option>
+                                                    <option value="">Representant</option>
+                                                    <option value="">Enseignant</option>
+                                                </select>
+                                            </div>
+                                           
+                                        </div>
                                     </div>
-                                    <div>
-                                        <input type="text" placeholder="M. koudil">
-                                      </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div >
+                                                <input type="text" class="form-control" placeholder="Nom et Prenom">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                   
+                                <button style="" class="btn btn-square btn-primary"
+                                    onclick="myFunction1()">Ajouter</button>
+                                <button style="" type="button" class="btn btn-square btn-danger"
+                                    onclick="Hide1()">
+                                    Supprimer
+                                    </button>
+                                <script>
+                                    function Hide1() {
+                                       // document.getElementById("present").style.display = "none";
+                                       var element = document.getElementById("present");
+                                        element.parentNode.removeChild(element);
+                                    }
+                                    function myFunction1() {
+                                        var para = document.getElementById("present");
+                                        var dup = para.cloneNode(true);
+                                        document.getElementById("present-add").appendChild(dup);
+                                    }
+                                    </script>
+                                
+                                 
                             </div>
-                                </div>
-                                <div class="custom-control custom-control-alternative custom-checkbox mb-3">
-                                    <input class="custom-control-input" id="customCheck5" type="checkbox">
-                                    <label class="custom-control-label" for="customCheck5">Directeur de l’Ecole et Président du Conseil Scientifique</label>
-                                  </div>
-                                  <div class="custom-control custom-control-alternative custom-checkbox mb-3">
-                                    <input class="custom-control-input" id="customCheck6" type="checkbox" checked>
-                                    <label class="custom-control-label" for="customCheck6">Checked</label>
-                                  </div>
-                                  <div class="custom-control custom-control-alternative custom-checkbox mb-3">
-                                    <input class="custom-control-input" id="customCheck7" type="checkbox" disabled>
-                                    <label class="custom-control-label" for="customCheck7">Disabled Unchecked</label>
-                                  </div>
-                                  <div class="custom-control custom-control-alternative custom-checkbox mb-3">
-                                    <input class="custom-control-input" id="customCheck8" type="checkbox" checked disabled>
-                                    <label class="custom-control-label" for="customCheck8">Disabled Checked</label>
-                                  </div>
-                            </div>
+                            
                         </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5>Etaient absents :</h5>
-                            </div>
-                            <div class="card-block">
-                                <button type="button" class="btn btn-outline-primary" title="btn btn-outline-primary" data-toggle="tooltip">Primary</button>
-                                <button type="button" class="btn btn-outline-secondary" title="btn btn-outline-secondary" data-toggle="tooltip">Secondary</button>
-                                <button type="button" class="btn btn-outline-success" title="btn btn-outline-success" data-toggle="tooltip">Success</button>
-                                <button type="button" class="btn btn-outline-danger" title="btn btn-outline-danger" data-toggle="tooltip">Danger</button>
-                                <button type="button" class="btn btn-outline-warning" title="btn btn-outline-warning" data-toggle="tooltip">Warning</button>
-                                <button type="button" class="btn btn-outline-info" title="btn btn-outline-info" data-toggle="tooltip">Info</button>
-                                <button type="button" class="btn btn-outline-light" title="btn btn-outline-light" data-toggle="tooltip">Light</button>
-                                <button type="button" class="btn btn-outline-dark" title="btn btn-outline-dark" data-toggle="tooltip">Dark</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5>Ordre du jour :</h5>
-                            </div>
-                            <div class="card-block">
-                                <p>use <code>.btn-square</code> in class <code>.btn</code> class to get square button</p>
-                                <button type="button" class="btn btn-square btn-primary">Primary</button>
-                                <button type="button" class="btn btn-square btn-secondary">Secondary</button>
-                                <button type="button" class="btn btn-square btn-success">Success</button>
-                                <button type="button" class="btn btn-square btn-danger">Danger</button>
-                                <button type="button" class="btn btn-square btn-warning">Warning</button>
-                                <button type="button" class="btn btn-square btn-info">Info</button>
-                                <button type="button" class="btn btn-square btn-light">Light</button>
-                                <button type="button" class="btn btn-square btn-dark">Dark</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <h5>Début de séance :</h5>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5>Changement de titre de mémoire :</h5>
-                            </div>
-                            <div class="card-block">
-                                <p>use <code>.btn-square</code> in class <code>.btn</code> class to get square button</p>
-                                <button type="button" class="btn btn-square btn-primary">Primary</button>
-                                <button type="button" class="btn btn-square btn-secondary">Secondary</button>
-                                <button type="button" class="btn btn-square btn-success">Success</button>
-                                <button type="button" class="btn btn-square btn-danger">Danger</button>
-                                <button type="button" class="btn btn-square btn-warning">Warning</button>
-                                <button type="button" class="btn btn-square btn-info">Info</button>
-                                <button type="button" class="btn btn-square btn-light">Light</button>
-                                <button type="button" class="btn btn-square btn-dark">Dark</button>
-                            </div>
-                        </div>
-                       
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5>Soutenances de doctorat (Ecole Doctorale):</h5>
-                            </div>
-                            <div class="card-block">
-                                <p>use <code>.btn-square</code> in class <code>.btn</code> class to get square button</p>
-                                <button type="button" class="btn btn-square btn-primary">Primary</button>
-                                <button type="button" class="btn btn-square btn-secondary">Secondary</button>
-                                <button type="button" class="btn btn-square btn-success">Success</button>
-                                <button type="button" class="btn btn-square btn-danger">Danger</button>
-                                <button type="button" class="btn btn-square btn-warning">Warning</button>
-                                <button type="button" class="btn btn-square btn-info">Info</button>
-                                <button type="button" class="btn btn-square btn-light">Light</button>
-                                <button type="button" class="btn btn-square btn-dark">Dark</button>
-                            </div>
-                        </div>
-                       
-                    </div> 
+                    
                 </div>
-               
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Absences excusées :</h5>
+                        </div>
+                        <div class="card-block" >
+                            <div id="abs-add"></div>
+                             <div class="row" id="abs">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        
+                                        <div style="">
+                                            <select class="form-control">
+                                                <option value="">Directeur de l’Ecole et Président du Conseil
+                                                    Scientifique</option>
+                                                <option value="">Directeur adjoint chargé des relations extérieures
+                                                </option>
+                                                <option value="">Directrice adjoint chargée de la pédagogie</option>
+                                                <option value="">Directeur adjoint chargé de la post-graduation
+                                                </option>
+                                                <option value="">Chef de département, responsable des classes
+                                                    préparatoires</option>
+                                                <option value="">Directrice de laboratoire</option>
+                                                <option value="">Directrice de la bibliothèque</option>
+                                                <option value="">Enseignant permanent à l’USTHB
+                                                </option>
+                                                <option value="">Representant</option>
+                                                <option value="">Enseignant</option>
+                                            </select>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div >
+                                            <input type="text" class="form-control" placeholder="Nom et Prenom">
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>
+                                
+                            <button style="" class="btn btn-square btn-primary"
+                                onclick="myFunction()">Ajouter</button>
+                            <button style="" type="button" class="btn btn-square btn-danger"
+                                id="remove">
+                                Supprimer
+                                </button>
+                            <script>
+                                function Hide() {
+                                    
+                                   var element1 = document.getElementById("abs");
+                                    element1.parentNode.removeChild(element1);
+                                   //element1.removeChild(element1.lastChild);
+                                 
+                                   
+                                }
+                                function myFunction() {
+                                    var para1 = document.getElementById("abs");
+                                    var dup1 = para1.cloneNode(true);
+                                    document.getElementById("abs-add").appendChild(dup1);
+                                }
+                                document.getElementById('remove').addEventListener('click', Hide, false);
+                                </script>
+                            
+                             
+                        </div>
+                        
+                    </div>
                 
             </div>
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Ordre du jour :</h5>
+                        </div>
+                        <div class="card-block" >
+                            <div id="ordre-place"></div>
+                            <div  class="mb-4" id="ordre">
+                                <div class="form-group">
+                                    
+                                    <div style="">
+                                        <select class="form-control">
+                                            
+
+                                            <option value="habilitation">Habilitation universitaire</option>
+                                            <option value="soutenance">Soutenances doctorat
+                                            </option>
+                                            <option value="congé">Congés scientifiques</option>
+                                            <option value="inscription">Inscription Doctorat LMD</option>
+                                            <option value="reinscription">Réinscription Doctorat LMD</option>
+                                            <option value="projet">Projets de recherche </option>
+                                            <option value="divers">Divers</option>
+                                        </select>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            
+                        
+                        <button style="" class="btn btn-square btn-primary"
+                                onclick="myFunction2()">Ajouter</button>
+                            <button style="" type="button" class="btn btn-square btn-danger"
+                                onclick="Hide2()">
+                                Supprimer
+                                </button>
+                            <script>
+                                function Hide2() {
+                                   // document.getElementById("present").style.display = "none";
+                                   var element = document.getElementById("ordre");
+                                    element.parentNode.removeChild(element);
+                                }
+                                function myFunction2() {
+                                    var para = document.getElementById("ordre");
+                                    var dup = para.cloneNode(true);
+                                    document.getElementById("ordre-place").appendChild(dup);
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <h5>Début de séance :</h5>
+                            </div>
+                        </div>
+                        <div class="card-block" >
+                            
+                            <div  class="mb-4" >
+                                
+                                    <div class="input-group">
+                                        <input data-datepicker="" class="form-control"  type="time"
+                                            placeholder="10:00" required>
+                                    </div>
+                            </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Changement de titre de mémoire :</h5>
+                        </div>
+                        <div class="card-block">
+                            <p>use <code>.btn-square</code> in class <code>.btn</code> class to get square button</p>
+                            <button type="button" class="btn btn-square btn-primary">Primary</button>
+                            <button type="button" class="btn btn-square btn-secondary">Secondary</button>
+                            <button type="button" class="btn btn-square btn-success">Success</button>
+                            <button type="button" class="btn btn-square btn-danger">Danger</button>
+                            <button type="button" class="btn btn-square btn-warning">Warning</button>
+                            <button type="button" class="btn btn-square btn-info">Info</button>
+                            <button type="button" class="btn btn-square btn-light">Light</button>
+                            <button type="button" class="btn btn-square btn-dark">Dark</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header ">
+                            <div style="display: flex;align-items: center;justify-content: space-between; ">
+                                <div>
+                                    <h5>Soutenances de doctorat (Ecole Doctorale):</h5>
+                                </div>
+                                <div>
+                                <button class="btn btn-square btn-success " type="button"
+                                        onclick="Ajouterdoc()">Ajouter Condidat </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-block">
+                            <div class="mb-4"> <label style="font-size: 20px;font-weight: 400;">Condidat</label> <input type="text"
+                                class="form-control" id="TitreReunionValidate"> </div>
+                                <div  class="mb-4"> <label for="TitreReunion">Titre</label> <input type="text"
+                                    class="form-control" id="TitreReunionValidate"> </div>
+                                <div  class="mb-4"> <label for="TitreReunion">Directeur de thèse</label> <input type="text"  class="form-control" id="TitreReunionValidate"> </div>
+                            <p>use <code>.btn-square</code> in class <code>.btn</code> class to get square button</p>
+                            <button type="button" class="btn btn-square btn-primary">Primary</button>
+                            <button type="button" class="btn btn-square btn-secondary">Secondary</button>
+                            <button type="button" class="btn btn-square btn-success">Success</button>
+                            <button type="button" class="btn btn-square btn-danger">Danger</button>
+                            <button type="button" class="btn btn-square btn-warning">Warning</button>
+                            <button type="button" class="btn btn-square btn-info">Info</button>
+                            <button type="button" class="btn btn-square btn-light">Light</button>
+                            <button type="button" class="btn btn-square btn-dark">Dark</button>
+                        </div>
+                        <script>
+                            function addblock(id_div1,id_div2 ) {
+                                    var v1 = document.getElementById(id_div1);
+                                    var v2 = v1.cloneNode(true);
+                                    document.getElementById(id_div2).appendChild(v2);
+                                }
+                            function removefromlast(div1){
+                                var ele=document.getElementById(div1);
+                                ele.parentNode.removeChild(ele);
+                            }
+                        </script>
+                    </div>
+
+                </div>
+            </div>
+
+
         </div>
     </div>
+</div>
 </div>
 
 
