@@ -6,7 +6,7 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
-
+<!-- Modification code a partir de la  -->
     <div class="pcoded-content">
         <div class="pcoded-inner-content">
             <!-- [ breadcrumb ] start -->
@@ -19,14 +19,17 @@
                             </div>
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="javascript:"> Comité de Formation
+                                <li class="breadcrumb-item"><a href="javascript:">  Comité de Formation
                                     Doctorale de L’École Doctorale de l’ESI</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                           
             </div>
             <!-- [ breadcrumb ] end -->
+            <form action="test.html" onsubmit="result()">
+                
             <div class="main-body">
                 <div class="page-wrapper">
                     <!-- [ Main Content ] start -->
@@ -40,16 +43,17 @@
                                 <div class="card-header">
                                     <h5>PV CFD </h5>
                                 </div>
+                               
                                 <div class="card-block">
                                     <div class="mb-4">
                                         <label for="TitreReunion">Ordre du jour</label>
-                                        <input type="text" class="form-control" id="TitreReunionValidate" >
-                                       
+                                        <input type="text" class="form-control" id="TitreReunion" >
+                                    
                                     </div>
                                     <div id="test">
                                         <label for="TitreReunion">Etaient presents: </label>
                                         <div  class="mb-4" for="TitreReunion" id="duppliquer">
-                                        <input type="text" class="form-control" id="TitreReunionValidate" >
+                                        <input type="text" class="form-control" id="presents" >
                                         </div>
                                     </div>  
                                     <button style="float: right;" class="btn btn-square btn-primary" onclick="myFunction1()">Ajouter</button>
@@ -67,7 +71,7 @@
                                         }
                                         </script>        
                                         <div class="mb-4">
-                                            <label for="birthday">Date de la réunion</label>
+                                            <label for="birthday" id=c>Date de la réunion </label>
                                             <div class="input-group">
                                                 <input data-datepicker="" class="form-control" id="datereunion" type="datetime" placeholder="dd/mm/yyyy" required>
                                             </div> 
@@ -75,13 +79,13 @@
                                         <div class="mb-4">
                                             <label for="birthday">Début de la réunion</label>
                                             <div class="input-group">
-                                                <input data-datepicker="" class="form-control" id="datereunion" type="datetime" placeholder="11H:30" required>
+                                                <input data-datepicker="" class="form-control" id="debreunion" type="datetime" placeholder="11H:30" required>
                                             </div> 
                                         </div>
                                         <div class="mb-4">
                                             <label for="birthday">Fin de la réunion</label>
                                             <div class="input-group">
-                                                <input data-datepicker="" class="form-control" id="datereunion" type="datetime" placeholder="11H:30" required>
+                                                <input data-datepicker="" class="form-control" id="finreunion" type="datetime" placeholder="11H:30" required>
                                             </div> 
                                         </div> 
                             </div>    
@@ -162,11 +166,33 @@
                             <button class="dropdown-item"  onclick="affichersection()" >Section validation sujet </button>
                             <button class="dropdown-item"  onclick="affichersec2()" >Section suivi doctorants   </button>
                         </div>
-                        <button class="btn btn-primary " type="button"  aria-haspopup="true" aria-expanded= "false" onclick="">Generer PV sous format PDF</button>          
+                    
+                        <button class="btn btn-primary "  id="valider"  aria-haspopup="true" aria-expanded= "false" onclick="result()" > Valider PV</button>            
+
+                        <button class="btn btn-primary " type="button"  aria-haspopup="true" aria-expanded= "false" onclick="">Generer PV sous format PDF</button>  
+                    
                     <!-- [ Main Content ] end -->
             </div>
         </div>
-    </div>
+        
+        <script>
+            function result(){
+            let titre =document.getElementById('TitreReunion').value;
+            let date =document.getElementById('datereunion').value;
+            let deb =document.getElementById('debreunion').value;
+            let fin =document.getElementById('finreunion').value;
+            localStorage.setItem('Titre', titre);
+            sessionStorage.setItem('Date', date);
+            sessionStorage.setItem('Debut_reunion', deb);
+            sessionStorage.setItem('Fin_reunion',fin);
+                console.log(localStorage.getItem('Titre'));
+            }
+            
+        </script>
+    </form>
+
+    </div> <!-- 2eme  --> 
+</div>
 {% endblock content %}
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}{% endblock javascripts %}
