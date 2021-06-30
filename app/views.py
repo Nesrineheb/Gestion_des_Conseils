@@ -11,6 +11,8 @@ from django import template
 from django.shortcuts import redirect, render
 from .models import Document
 from .forms import DocumentForm
+from .models import Expert
+from .forms import ExpertForm
 
 @login_required(login_url="/login/")
 def index(request):
@@ -67,3 +69,22 @@ def my_view(request):
     # Render list page with the documents and the form
     context = {'documents': documents, 'form': form, 'message': message}
     return render(request, 'ui-collapse.html', context)
+
+def TousLesExpert(request):
+    if request.method == 'POST':
+        e =Expert()
+        e.Nom = request.POST.get('Nom')
+        e.Prenom = request.POST.get('Prenom')
+        e.Domaine = request.POST.get('Domaine')
+        e.Grade= request.POST.get('Grade')
+        e.Annee_expertise= request.POST.get('AnExp')
+        e.Etablissement =request.POST.get('Etablissement')
+        e.Num_teleph =request.POST.get('Num')
+        e.Email=request.POST.get('Email')
+        e.Matricule =request.POST.get('Matricule')
+        e.save()
+    listExperts = Expert.objects.all()
+    return render(request, "ui-tables.html", {"expert": listExperts})
+
+
+
