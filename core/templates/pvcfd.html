@@ -181,10 +181,11 @@
             let date =document.getElementById('datereunion').value;
             let deb =document.getElementById('debreunion').value;
             let fin =document.getElementById('finreunion').value;
+            localStorage.setItem('presents', document.getElementById('presents').value);
             localStorage.setItem('Titre', titre);
-            sessionStorage.setItem('Date', date);
-            sessionStorage.setItem('Debut_reunion', deb);
-            sessionStorage.setItem('Fin_reunion',fin);
+            localStorage.setItem('Date', date);
+            localStorage.setItem('Debut_reunion', deb);
+            localStorage.setItem('Fin_reunion',fin);
                 console.log(localStorage.getItem('Titre'));
             }
             
