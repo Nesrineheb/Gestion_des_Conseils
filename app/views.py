@@ -13,6 +13,7 @@ from .models import Document
 from .forms import DocumentForm
 from .models import Expert
 from .forms import ExpertForm
+from .models import Jury
 
 @login_required(login_url="/login/")
 def index(request):
@@ -83,8 +84,18 @@ def TousLesExpert(request):
         e.Email=request.POST.get('Email')
         e.Matricule =request.POST.get('Matricule')
         e.save()
+        f=Jury()
+        f.Nom = request.POST.get('Nom')
+        f.Prenom = request.POST.get('Prenom')
+        f.Domaine = request.POST.get('Domaine')
+        f.Email=request.POST.get('Email')
+        f.Matricule =request.POST.get('Matricule')
+        f.save()
+    listJurys = Jury.objects.all()
+    listExperts = Expert.objects.all()
+    return render(request, "ui-tables.html", {"expert": listExperts,"Jury": listJurys})
+
+def delete(request,id):
+    Expert.objects.filter(id=id).delete()
     listExperts = Expert.objects.all()
     return render(request, "ui-tables.html", {"expert": listExperts})
-
-
-

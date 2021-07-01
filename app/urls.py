@@ -16,6 +16,6 @@ urlpatterns = [
 
     # Matches any html file
     re_path(r'^.*\.*', views.pages, name='pages'),
-     
+    path("delete/<int:id>/",views.delete, name="delete"), 
     
 ]
