@@ -239,17 +239,25 @@
                                 <h5>Changement de titre de mémoire :</h5>
                             </div>
                             <div class="card-block">
-                                <p>use <code>.btn-square</code> in class <code>.btn</code> class to get square button
-                                </p>
-                                <button type="button" class="btn btn-square btn-primary">Primary</button>
-                                <button type="button" class="btn btn-square btn-secondary">Secondary</button>
-                                <button type="button" class="btn btn-square btn-success">Success</button>
-                                <button type="button" class="btn btn-square btn-danger">Danger</button>
-                                <button type="button" class="btn btn-square btn-warning">Warning</button>
-                                <button type="button" class="btn btn-square btn-info">Info</button>
-                                <button type="button" class="btn btn-square btn-light">Light</button>
-                                <button type="button" class="btn btn-square btn-dark">Dark</button>
+                            <div id="memoire" >
+                                <div class="mb-4"> <label style="font-size: 20px;font-weight: 400;">Condidat</label>
+                                    <input type="text" class="form-control" id="TitreReunionValidate">
+                                </div>
+                                <div class="mb-4"> <label for="TitreReunion">Titre</label> <input type="text"
+                                        class="form-control" id="TitreReunionValidate"> </div>
+                                <div class="mb-4"> <label for="TitreReunion">Directeur de thèse</label> <input
+                                        type="text" class="form-control" id="TitreReunionValidate"> </div>
+                                <div class="mb-4"> <label for="TitreReunion">Directeur de thèse</label> <input
+                                        type="text" class="form-control" id="TitreReunionValidate"> </div>
+
+                                 <div class="mb-4"> <label for="TitreReunion">Titre de Memoire </label> <input
+                                            type="text" class="form-control" id="TitreReunionValidate"> </div>
+
+                                
+                                <div class="mb-4"> <label for="TitreReunion">Avis de CS</label> <input
+                                                type="text" class="form-control" id="TitreReunionValidate"> </div>           
                             </div>
+                        </div>
                         </div>
 
                     </div>
@@ -280,7 +288,10 @@
                                 </div>
                                 <div id="con-add"></div>
                             </div>
-
+                            <div class="dropdown-menu">
+                                <button class="dropdown-item" onclick="affichersection()">Section validation sujet </button>
+                                <button class="dropdown-item" onclick="affichersec2()">Section suivi doctorants </button>
+                            </div>
                         </div>
 
                         <script>
@@ -301,6 +312,7 @@
                             localStorage.setItem("serialNumber", "abc123def456");
                         </script>
                     </div>
+                    
 
                 </div>
             </div>

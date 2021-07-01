@@ -30,5 +30,18 @@ class Expert(models.Model):
     Annee_expertise= models.CharField(max_length=150)
     Etablissement= models.CharField(max_length=150)
 
+class Jury(models.Model):
+    Matricule= models.CharField(max_length=150)
+    Nom= models.CharField(max_length=150)
+    Prenom= models.CharField(max_length=150)
+    Email= models.CharField(max_length=150)
+    Domaine= models.CharField(max_length=150)
+
 class Document(models.Model):
     docfile = models.FileField(upload_to='documents/%Y/%m/%d')
+
+
+class Sujet(models.Model):
+    Sujet= models.CharField(max_length=150)
+    Avis= models.CharField(max_length=150)
+    MotsCles= models.CharField(max_length=150)

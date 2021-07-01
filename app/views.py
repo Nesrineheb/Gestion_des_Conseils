@@ -12,7 +12,7 @@ from django.shortcuts import redirect, render
 from .models import Document
 from .forms import DocumentForm
 from .models import Expert
-from .forms import ExpertForm
+from .models import Jury
 
 @login_required(login_url="/login/")
 def index(request):
@@ -20,7 +20,7 @@ def index(request):
     context = {}
     context['segment'] = 'index'
 
-    html_template = loader.get_template( 'index.html' )
+    html_template = loader.get_template( 'page-blank.html' )
     return HttpResponse(html_template.render(context, request))
 
 @login_required(login_url="/login/")
@@ -69,7 +69,6 @@ def my_view(request):
     # Render list page with the documents and the form
     context = {'documents': documents, 'form': form, 'message': message}
     return render(request, 'ui-collapse.html', context)
-
 def TousLesExpert(request):
     if request.method == 'POST':
         e =Expert()
@@ -83,8 +82,26 @@ def TousLesExpert(request):
         e.Email=request.POST.get('Email')
         e.Matricule =request.POST.get('Matricule')
         e.save()
+    
+
+    listExperts = Expert.objects.all()
+    listJurys = Jury.objects.all()
+    return render(request, "ui-tables.html", {"expert": listExperts,"Jury": listJurys})
+
+def delete(request,id):
+    Expert.objects.filter(id=id).delete()
     listExperts = Expert.objects.all()
     return render(request, "ui-tables.html", {"expert": listExperts})
 
 
 
+def TousLesTheses(request):
+    if request.method == 'POST':
+        e=Sujet()
+        e.Sujet= request.POST.get('Sujet')
+        e.Avis = request.POST.get('Avis')
+        e.MotsCles = request.POST.get('MotsCles')
+        e.save()
+    listSujets= Sujet.objects.all()
+  
+    return render(request, "historiquedecision.html", {"these_decision": listSujets})

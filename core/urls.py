@@ -9,8 +9,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import url
 from .views import GeneratePDF
+from .views import GeneratePDFexpert
 urlpatterns = [
     url('pdf',GeneratePDF.as_view()),
+    url('pdexpert',GeneratePDFexpert.as_view()),
     path('admin/', admin.site.urls),          # Django admin route
     path("", include("authentication.urls")), # Auth routes - login / register
     path("", include("app.urls"))             # UI Kits Html files
