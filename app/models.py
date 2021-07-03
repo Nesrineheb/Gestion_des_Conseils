@@ -36,7 +36,6 @@ class Jury(models.Model):
     Prenom= models.CharField(max_length=150)
     Email= models.CharField(max_length=150)
     Domaine= models.CharField(max_length=150)
-
 class Document(models.Model):
     docfile = models.FileField(upload_to='documents/%Y/%m/%d')
 

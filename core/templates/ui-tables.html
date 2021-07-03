@@ -77,7 +77,10 @@
                                             <td>
                                                 {{e.Etablissement}}
                                             </td>
-                                            
+                                            <td>
+                                            <form  action="{% url 'delete' id=e.id%}" method="POST">
+                                            {% csrf_token %} <button type="button" class="btn btn-outline-danger"  >Supprimer</button></form>
+                                           </td>
                                             </tr>
                                          {% endfor %}
                                         </tbody>
@@ -111,7 +114,11 @@
 
                                         </thead>
                                         <tbody>
+<<<<<<< HEAD
                                          {% for f in Jury %}
+=======
+                                         {% for f in jury %}
+>>>>>>> 9128921571b0c9e261d2d88271624b4b37c13d74
                                          <tr>
                               
                                             <td >{{f.Matricule}} </td>
@@ -158,7 +165,11 @@
                 </button>
             </div>
         <div class="modal-body">
+<<<<<<< HEAD
                          <form action="addjury" method="POST">
+=======
+                         <form action="#" method="POST">
+>>>>>>> 9128921571b0c9e261d2d88271624b4b37c13d74
                                     {% csrf_token %}
                                     <!-- Form -->
                                     
@@ -316,7 +327,11 @@
                                 </div>
                                 </form>
          </div>
+<<<<<<< HEAD
          
+=======
+            
+>>>>>>> 9128921571b0c9e261d2d88271624b4b37c13d74
          </div>
         </div>
     </div>
@@ -324,7 +339,10 @@
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9128921571b0c9e261d2d88271624b4b37c13d74
       
 
    

@@ -91,9 +91,7 @@ def TousLesExpert(request):
 def delete(request,id):
     Expert.objects.filter(id=id).delete()
     listExperts = Expert.objects.all()
-    return render(request, "ui-tables.html", {"expert": listExperts})
-
-
+    return render(request, "ui-tables.html", {"expert": listExperts,"Jury": listJurys})
 
 def TousLesTheses(request):
     if request.method == 'POST':
